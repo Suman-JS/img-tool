@@ -42,7 +42,9 @@ const parseImageDimensions = (
   try {
     if (dimensions.length === 2) {
       const [width, height] = dimensions.map(Number);
-      if (!isNaN(width) && !isNaN(height)) return { width, height };
+      if (width === undefined && height === undefined)
+        return { height: 0, width: 0 };
+      if (!isNaN(width!) && !isNaN(height!)) return { width: 0, height: 0 };
     } else if (dimensions.length === 1) {
       const size = Number(dimensions[0]);
       if (!isNaN(size)) return { width: size, height: size };
