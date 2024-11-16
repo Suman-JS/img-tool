@@ -1,0 +1,77 @@
+{
+  "name": "img-tool",
+  "types": "module",
+  "main": "dist/main.js",
+  "version": "0.0.1",
+  "description": "CLI tool for image manipulation",
+  "bin": {
+    "img-tool": "dist/main.js",
+    "itool": "dist/main.js"
+  },
+  "files": [
+    "dist",
+    "package.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "start": "node dist/main.js",
+    "dev": "bun src/main.ts",
+    "lint": "tsc",
+    "build": "tsup src/main.ts",
+    "test": "vitest run",
+    "coverage": "vitest run --coverage",
+    "link": "(pnpm unlink --global || true) && pnpm link",
+    "clean": "rm -rf dist node_modules && pnpm unlink --global",
+    "ci": "pnpm run lint && pnpm run build && pnpm run test",
+    "release": "pnpm run ci && changeset publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Suman-JS/img-tool.git"
+  },
+  "keywords": [
+    "image",
+    "cli",
+    "tool",
+    "sharp",
+    "resize",
+    "image-tool",
+    "image-resize",
+    "image-optimization",
+    "image-manipulation",
+    "image-processing",
+    "image-processing-cli",
+    "image-processing-tool"
+  ],
+  "author": "Suman Mondal",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/Suman-JS/img-tool/issues"
+  },
+  "homepage": "https://github.com/Suman-JS/img-tool#readme",
+  "type": "module",
+  "devDependencies": {
+    "@changesets/cli": "^2.27.9",
+    "@types/eslint": "^9.6.1",
+    "@types/gradient-string": "^1.1.6",
+    "@types/node": "^22.9.0",
+    "eslint": "^9.14.0",
+    "prettier": "^3.3.3",
+    "ts-node": "^10.9.2",
+    "tsup": "^8.3.5",
+    "typescript": "^5.6.3",
+    "vitest": "^2.1.5"
+  },
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "commander": "^12.1.0",
+    "glob": "^11.0.0",
+    "gradient-string": "^3.0.0",
+    "ora": "^8.1.1",
+    "sharp": "^0.33.5"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
