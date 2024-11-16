@@ -2,6 +2,7 @@
   "name": "img-tool",
   "types": "module",
   "main": "dist/main.js",
+  "module": "dist/main.js",
   "version": "0.0.1",
   "description": "CLI tool for image manipulation",
   "bin": {
