@@ -32,28 +32,41 @@ const parseImageDimensions = (
   dimensionString: string,
   _originalMetadata: ImageMetadata,
 ): { width: number; height: number } | null => {
-  let dimensions: string[] = [];
+  // Return null if input is not a string
   if (typeof dimensionString !== "string") {
-    dimensions.push(dimensionString);
-  } else {
-    dimensions = dimensionString.toLowerCase().split("x");
-  }
-
-  try {
-    if (dimensions.length === 2) {
-      const [width, height] = dimensions.map(Number);
-      if (width === undefined && height === undefined)
-        return { height: 0, width: 0 };
-      if (!isNaN(width!) && !isNaN(height!)) return { width: 0, height: 0 };
-    } else if (dimensions.length === 1) {
-      const size = Number(dimensions[0]);
-      if (!isNaN(size)) return { width: size, height: size };
-    }
-  } catch {
     return null;
   }
 
-  return null;
+  // Split the string by 'x' and trim whitespace
+  const parts = dimensionString
+    .toLowerCase()
+    .trim()
+    .split("x")
+    .map((d) => d.trim());
+
+  try {
+    // Handle "width x height" format
+    if (parts.length === 2) {
+      const width = Number(parts[0]);
+      const height = Number(parts[1]);
+
+      // Check if both values are valid numbers
+      if (!isNaN(width) && !isNaN(height) && width > 0 && height > 0) {
+        return { width, height };
+      }
+    }
+    // Handle square format (single number)
+    else if (parts.length === 1) {
+      const size = Number(parts[0]);
+      if (!isNaN(size) && size > 0) {
+        return { width: size, height: size };
+      }
+    }
+
+    return null;
+  } catch {
+    return null;
+  }
 };
 
 /**
