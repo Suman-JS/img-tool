@@ -25,7 +25,12 @@
     "link": "(pnpm unlink --global || true) && pnpm link --global",
     "clean": "rm -rf dist node_modules && pnpm unlink --global",
     "ci": "pnpm run lint && pnpm run build && pnpm run test",
-    "release": "pnpm run ci && changeset publish"
+    "release": "changeset publish",
+    "version": "changeset version",
+    "changeset": "changeset"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "repository": {
     "type": "git",
