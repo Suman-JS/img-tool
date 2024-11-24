@@ -1,5 +1,11 @@
 # img-tool
 
+## 1.0.1
+
+### Patch Changes
+
+- 5c13d31: fixed: package.json
+
 ## 1.0.0
 
 ### Major Changes
