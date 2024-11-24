@@ -1,5 +1,11 @@
 # img-tool
 
+## 1.0.2
+
+### Patch Changes
+
+- 63f6e05: fix pnpm publish
+
 ## 1.0.1
 
 ### Patch Changes
