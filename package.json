@@ -1,13 +1,13 @@
 {
-  "name": "img-tool",
+  "name": "@sumanjs/img-tool",
   "types": "module",
   "main": "dist/main.js",
   "module": "dist/main.js",
   "version": "1.0.0",
   "description": "CLI tool for image manipulation",
+  "preferGlobal": true,
   "bin": {
-    "img-tool": "dist/main.js",
-    "itool": "dist/main.js"
+    "img-tool": "dist/main.js"
   },
   "files": [
     "dist",
