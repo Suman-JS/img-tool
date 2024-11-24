@@ -3,7 +3,7 @@
   "types": "module",
   "main": "dist/main.js",
   "module": "dist/main.js",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "CLI tool for image manipulation",
   "preferGlobal": true,
   "bin": {
